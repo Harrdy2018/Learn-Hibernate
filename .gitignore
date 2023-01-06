@@ -24,3 +24,7 @@ hs_err_pid*
 
 # Java Files
 target/
+
+# idea
+.idea
+*.iml
