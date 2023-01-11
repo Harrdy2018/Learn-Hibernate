@@ -1,5 +1,6 @@
 package net.biancheng.www.test;
 
+import net.biancheng.www.po.EmailUser;
 import net.biancheng.www.po.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -41,6 +42,23 @@ public class QueryTest {
         for (Employee employee : resultList) {
             System.out.println(employee.getId()+" "+employee.getName()+" "+employee.getBirth()+" "+employee.getSalary());
         }
+        transaction.commit();
+        session.close();
+        sessionFactory.close();
+    }
+
+    /**
+     * 使用 HQL 查询
+     */
+    @Test
+    public void testHqlQueryEmailUser() {
+        Configuration configuration = new Configuration().configure();
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery("from EmailUser");
+        List<EmailUser> resultList = query.getResultList();
+        System.out.println(resultList);
         transaction.commit();
         session.close();
         sessionFactory.close();

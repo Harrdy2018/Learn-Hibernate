@@ -28,5 +28,6 @@
 
         <!-- 引入orm注解类 -->
         <mapping class="net.biancheng.www.po.Employee" />
+        <mapping class="net.biancheng.www.po.EmailUser" />
     </session-factory>
 </hibernate-configuration>
