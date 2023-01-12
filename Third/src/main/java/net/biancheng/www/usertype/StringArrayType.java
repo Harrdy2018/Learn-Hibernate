@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 import java.util.Arrays;
 
+// mysql不支持插入数组，需要使用PostgreSQL数据库
 public class StringArrayType implements UserType {
     @Override
     public int[] sqlTypes() {
