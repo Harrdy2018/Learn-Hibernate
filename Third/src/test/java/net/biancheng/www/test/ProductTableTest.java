@@ -5,12 +5,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.junit.Test;
 
-public class CreateTableTest {
+public class ProductTableTest {
     /**
-     * 数据库javaguider创建表tbl_employee
+     * 数据库javaguider创建表tbl_product
      */
     @Test
-    public void testQuery() {
+    public void testCreateTable() {
         Configuration configuration = new Configuration().configure();
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();

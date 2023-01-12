@@ -10,8 +10,8 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
 
-        <!--hibernate 方言-->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!--hibernate 方言 我的数据库是mysql57那我就要对应我的方言版本-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
         <!--打印sql语句-->
         <property name="hibernate.show_sql">true</property>
         <!--格式化sql-->
@@ -29,5 +29,6 @@
         <!-- 引入orm注解类 -->
         <mapping class="net.biancheng.www.po.Employee" />
         <mapping class="net.biancheng.www.po.EmailUser" />
+        <mapping class="net.biancheng.www.po.Product" />
     </session-factory>
 </hibernate-configuration>

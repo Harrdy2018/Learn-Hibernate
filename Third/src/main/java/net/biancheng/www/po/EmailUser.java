@@ -1,5 +1,9 @@
 package net.biancheng.www.po;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import net.biancheng.www.usertype.EmailArrayType;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
@@ -13,6 +17,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.List;
 
+@Getter(value = AccessLevel.PUBLIC) // 生成的get方法全是public修饰的
+@Setter(value = AccessLevel.PUBLIC) // 生成的set方法全是public修饰的
+@ToString
 @Entity
 @Table(name = "tbl_emailuser")
 @TypeDefs(value = {
@@ -30,37 +37,4 @@ public class EmailUser {
     @Type(type = "string-list")
     @Column(name = "email_list", nullable = false, columnDefinition = "varchar(1000) NOT NULL COMMENT 'email网址集合'")
     private List<String> emailList;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<String> getEmailList() {
-        return emailList;
-    }
-
-    public void setEmailList(List<String> emailList) {
-        this.emailList = emailList;
-    }
-
-    @Override
-    public String toString() {
-        return "EmailUser{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", emailList=" + emailList +
-                '}';
-    }
 }
