@@ -30,5 +30,6 @@
         <mapping class="net.biancheng.www.po.Employee" />
         <mapping class="net.biancheng.www.po.EmailUser" />
         <mapping class="net.biancheng.www.po.Product" />
+        <mapping class="net.biancheng.www.po.Person" />
     </session-factory>
 </hibernate-configuration>
